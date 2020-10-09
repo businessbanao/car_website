@@ -1854,7 +1854,7 @@ ol {
 }
 
 .testimonial__item p {
-	font-size: 20px;
+	font-size: 15px;
 	color: #353535;
 	line-height: 32px;
 	margin-bottom: 0;
@@ -1862,11 +1862,11 @@ ol {
 
 .testimonial__item__author {
 	overflow: hidden;
-	margin-bottom: 22px;
+	margin-bottom: 5px;
 }
 
 .testimonial__item__author__pic {
-	float: left;
+	/*float: left;*/
 	margin-right: 30px;
 }
 
@@ -1885,7 +1885,7 @@ ol {
 }
 
 .testimonial__item__author__text h5 {
-	font-size: 20px;
+	font-size: 15px;
 	color: #353535;
 	font-weight: 700;
 }
@@ -3791,3 +3791,12 @@ ol {
 .insurance_logo{
 	height: 80%;
 }
+
+.testimonial_img{
+	height: 200px;
+	border-radius: 10px;
+}
+
+ .team_menbers{
+	 height: 300px;
+ }
