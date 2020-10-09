@@ -2273,7 +2273,7 @@ ol {
 
 .latest {
 	padding-bottom: 70px;
-	padding-top: 160px;
+	padding-top: 20px;
 }
 
 .latest .section-title {
@@ -3786,4 +3786,8 @@ ol {
 
 .service_img{
 	height: 137px;
+}
+
+.insurance_logo{
+	height: 80%;
 }
