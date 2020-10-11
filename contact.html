@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css" integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ==" crossorigin="anonymous" />
 	
 	<link href="http://fonts.googleapis.com/css?family=Chau Philomene One" rel="stylesheet" type="text/css" />
 </head>
@@ -191,15 +192,15 @@
                         <form action="#">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Name">
+                                    <input type="text" id="name" placeholder="Name">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Contact Number">
+                                    <input type="number" id="mobile" placeholder="Contact Number">
                                 </div>
                             </div>
-                            <input type="text" placeholder="Subject">
-                            <textarea placeholder="Your Question"></textarea>
-                            <button type="submit" class="site-btn">Submit Now</button>
+                            <input type="text" id="subject" placeholder="Subject">
+                            <textarea id="question" placeholder="Your Question"></textarea>
+                            <button type="button" id="onSubmitBtn" class="site-btn">Submit Now</button>
                         </form>
                     </div>
                 </div>
@@ -350,6 +351,54 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+                $( "#onSubmitBtn" ).click(function() {
+                    console.log(document.getElementById('name').value);
+
+                    let description= `Subject : ${document.getElementById('subject').value} , Question : ${document.getElementById('question').value}`
+
+                    userData = {
+                        name: document.getElementById('name').value,
+                        mobile: document.getElementById('mobile').value,
+                        city: "delhi",
+                        title: "From Website Contact us",
+                        description: description,
+                        ownerId: "5f6f0e8c1f46bf3f11660245",
+                    };
+                    console.log(userData,"userData")
+
+
+                    var saveData = $.ajax({
+                        type: 'POST',
+                        url:  'http://18.188.5.64:3000/api/v1/customer/saveQuery',
+                        data: userData,
+                        success: function(resultData) { 
+
+                            document.getElementById('name').value = '';
+                                document.getElementById('mobile').value = '';
+                                document.getElementById('question').value = '';
+                                document.getElementById('subject').value = '';
+                                
+                            $.toast({ 
+                                    text : "Thanks for Showing Interest , We will contact you shortly", 
+                                    bgColor : 'green',              // Background color for toast
+                                    textColor : '#eee',            // text color
+                                    allowToastClose : false,       // Show the close button or not
+                                    hideAfter : 7000,              // `false` to make it sticky or time in miliseconds to hide after
+                                    stack : 5,                     // `fakse` to show one stack at a time count showing the number of toasts that can be shown at once
+                                    textAlign : 'left',            // Alignment of text i.e. left, right, center
+                                    position : 'top-right'       // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values to position the toast on page
+                                })
+                              
+                         }
+                        });
+           
+                });
+        });
+    </script>
 </body>
 
 </html>
