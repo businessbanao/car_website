@@ -3266,8 +3266,8 @@ ol {
 		border-radius: 2px;
 		cursor: pointer;
 		position: absolute;
-		right: 15px;
-		top: 35px;
+		right: 20px;
+		top: 30px;
 	}
 	.offcanvas-menu-overlay {
 		position: fixed;
@@ -3406,7 +3406,7 @@ ol {
 @media only screen and (max-width: 767px) {
 	.hero__text {
 		padding-top: 0;
-		margin-bottom: 40px;
+		margin-bottom: 10px;
 	}
 	.chooseus {
 		height: auto;
@@ -3501,8 +3501,8 @@ ol {
 		border-radius: 2px;
 		cursor: pointer;
 		position: absolute;
-		right: 15px;
-		top: 35px;
+		right: 20px;
+		top: 30px;
 	}
 	.offcanvas-menu-overlay {
 		position: fixed;
@@ -3575,7 +3575,7 @@ ol {
 		display: block !important;
 	}
 	.offcanvas__logo {
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 	.offcanvas__widget {
 		margin-bottom: 30px;
@@ -3598,6 +3598,7 @@ ol {
 		margin-right: 35px;
 		list-style: none;
 		line-height: 30px;
+		margin-top: 5px;
 	}
 	.offcanvas__widget__add li:last-child {
 		margin-right: 0;
@@ -3645,6 +3646,7 @@ ol {
 	}
 	.hero__text__title h2 {
 		font-size: 38px;
+		margin-top: -50px;
 	}
 	.hero__tab__form form .car-price .price-input {
 		position: relative;
