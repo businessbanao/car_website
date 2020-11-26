@@ -1253,14 +1253,15 @@ ol {
 
 .car__search form button {
 	font-size: 14px;
-	color: #AAAAB3;
-	position: absolute;
-	right: 0;
-	top: 0;
-	background: transparent;
-	border: none;
-	height: 100%;
-	padding: 0 15px;
+    color: #212529;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    height: 100%;
+    padding: 0 15px;
+    background-color: #d1d8e7;
 }
 
 .car__filter h5 {

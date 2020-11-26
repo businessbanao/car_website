@@ -1,23 +1,12 @@
-/*  ---------------------------------------------------
-    Template Name: HVAC
-    Description: HVAC Car Dealer HTML Template
-    Author: Colorlib
-    Author URI: https://www.colorlib.com
-    Version: 1.0
-    Created: Colorlib
----------------------------------------------------------  */
-
 'use strict';
 
 (function ($) {
-
     /*------------------
         Preloader
     --------------------*/
     $(window).on('load', function () {
         $(".loader").fadeOut();
         $("#preloder").delay(200).fadeOut("slow");
-
         /*------------------
             Car filter
         --------------------*/
@@ -25,12 +14,124 @@
             $('.filter__controls li').removeClass('active');
             $(this).addClass('active');
         });
+		
         if ($('.car-filter').length > 0) {
             var containerEl = document.querySelector('.car-filter');
             var mixer = mixitup(containerEl);
         }
+		
+		getCars(true);			
     });
 
+	function saveQuery() {
+        alert('saveQuery called');
+        let description = `I am looking For ${document.getElementById('brand').value} ${document.getElementById('car_name').value} `
+            userData = {
+				name: document.getElementById('name').value,
+				mobile: document.getElementById('mobile').value,
+				city: document.getElementById('city').value || 'Delhi',
+				title: "From Website Home",
+				description: description ,
+				ownerId: "5f6f0e8c1f46bf3f11660245",
+            };
+            
+			var saveData = $.ajax({
+				type: 'POST',
+                url:  'http://18.188.5.64:3000/api/v1/customer/saveQuery',
+                data: userData,
+                success: function(resultData) { 
+					document.getElementById('name').value = '';
+					document.getElementById('mobile').value = '';
+                    document.getElementById('city').value = '';
+                    document.getElementById('brand').value = '';
+                    document.getElementById('car_name').value = '';
+						$.toast({ 
+							text : "Thanks for Showing Interest , We will contact you shortly", 
+                            bgColor : 'green',              // Background color for toast
+                            textColor : '#eee',            // text color
+                            allowToastClose : false,       // Show the close button or not
+                            hideAfter : 7000,              // `false` to make it sticky or time in miliseconds to hide after
+                            stack : 5,                     // `fakse` to show one stack at a time count showing the number of toasts that can be shown at once
+                            textAlign : 'left',            // Alignment of text i.e. left, right, center
+                            position : 'top-right'       // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values to position the toast on page
+                        })
+                              
+                }
+            });
+		
+    }
+
+	function getCars(recomended) {
+		let filter=recomended?"rec":"";
+		
+		let uri = 'http://18.188.5.64:3000/api/v1/admin/all/5f6f0e8c1f46bf3f11660245/ProductsList/20/0?filter='+filter;
+		let h = new Headers();
+		h.append('__authorization_x_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbmRpcHVuamFiZGkuZ3piQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoicHVuamFiaWhhbmRpIiwiaWF0IjoxNjA1NTUxMzYwLCJleHAiOjE2MTMzMjczNjB9.ZSZower_BqliN0D7s7hgDrLvIfYHRNrdNSz24IQwM6k');
+
+		let req = new Request(uri, {
+			method:'GET',
+			headers:h,
+			mode:'cors'
+		});
+
+		fetch(req).then( (response)=> {
+			if(response.ok){
+				return response.json();
+			} else {
+				throw new Error("Bad Response");
+			}
+		}).then( (jsonData)=> {
+			jsonData.object.forEach(e=>{
+				let elm = '<div class="col-lg-3 col-md-4 col-sm-6 mix sale">'+
+						  '<div class="car__item">'+
+						  '<div class="car__item__pic__slider owl-carousel">';
+								
+				for (var index = 0; index < e.imageVarients.length; index++) { 
+					elm += '<img src="' + e.imageVarients[index] + '" alt="">';
+				} 
+				
+				elm += '</div>'+
+					   '<div class="car__item__text">'+
+					   '<div class="car__item__text__inner">'+
+					   '<h5><a href="#">' + e.productName + '</a></h5>'+
+					   '<ul>'+
+					   '<li><span>' + (e.addCustomeFeatures.price_from/100000).toFixed(2) + '</span> Lakh</li>'+
+					   '<li><span>' + e.addCustomeFeatures.engine + '</span> CC</li>'+
+					   '<li><span>' + e.addCustomeFeatures.bhp + '</span> BHP</li>'+
+					   '</ul>'+
+					   '</div>'+
+					   '<div class="car__item__price">'+
+					   '<span class="car-option">Book Now</span>'+
+					   '<h6><i class="fa fa-money"></i>₹&nbsp;&nbsp;' + e.discount + '&nbsp;CASHBACK</h6>'+
+					   '</div></div></div></div>';
+				
+				$(".carContainer").append(elm);				
+				applyCarousel();					
+			});
+		}).catch( (err)=>{
+			console.log('ERROR:', err.message);
+		});
+	}
+	
+	function applyCarousel() {
+        $(".car__item__pic__slider").owlCarousel({
+			loop: true,
+			margin: 0,
+			items: 1,
+			dots: true,
+			smartSpeed: 1200,
+			autoHeight: false,
+			autoplay: false
+		});
+    }
+	
+	/*--------------
+	  save query
+	----------------*/  
+	 $( "#onSubmitBtn" ).click(function() {
+		 saveQuery();
+	 });
+	
     /*------------------
         Background Set
     --------------------*/
@@ -211,5 +312,7 @@
             }
         });
     });
+	
+	
 
 })(jQuery);
