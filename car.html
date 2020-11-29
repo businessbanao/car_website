@@ -48,11 +48,11 @@
         <div id="mobile-menu-wrap"></div>
         <ul class="offcanvas__widget__add">
             <li><i class="fa fa-clock-o"></i> Week day: 07:00 am to 10:00 pm</li>
-            <li><i class="fa fa-envelope-o"></i>contact@bookmydreamcar.com</li>
+            <li><i class="fa fa-envelope-o"></i><a href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></li>
         </ul>
         <div class="offcanvas__phone__num">
             <i class="fa fa-phone"></i>
-            <span>+91-9958008084</span>
+            <span><a href="tel:919958008084">+91-9958008084</a></span>
         </div>
         <div class="offcanvas__social">
             <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
@@ -71,14 +71,14 @@
                     <div class="col-lg-7">
                         <ul class="header__top__widget">
                             <li><i class="fa fa-clock-o"></i> Week day: 07:00 am to 10:00 pm</li>
-                            <li><i class="fa fa-envelope-o"></i> contact@bookmydreamcar.com</li>
+                            <li><i class="fa fa-envelope-o"></i><a href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-5">
                         <div class="header__top__right">
                             <div class="header__top__phone">
                                 <i class="fa fa-phone"></i>
-                                <span>+91-9958008084</span>
+                                <span><a href="tel:919958008084">+91-9958008084</a></span>
                             </div>
                             <div class="header__top__social">
                                 <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
@@ -279,8 +279,8 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__contact__option">
-                            <div class="option__item"><i class="fa fa-phone"></i> +91-9958008084</div>
-                            <div class="option__item email"><i class="fa fa-envelope-o"></i> contact@bookmydreamcar.com</div>
+                            <div class="option__item"><i class="fa fa-phone"></i> <a href="tel:919958008084">+91-9958008084</a></div>
+                            <div class="option__item email"><i class="fa fa-envelope-o"></i><a href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></div>
                         </div>
                     </div>
                 </div>
@@ -294,7 +294,7 @@
 						</div>
                         <p>Shop no-55, Opposite Huda Complex Wazirabad Market Sector-52, Gurgaon, Haryana 
 						122003<br>
-						+91-9958008084</p>
+						<a href="tel:919958008084">+91-9958008084</a></p>
                         <div class="footer__social">
                             <a target="_blank" href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a target="_blank" href="#" class="instagram"><i class="fa fa-instagram"></i></a>
@@ -381,7 +381,14 @@
 
 <script>
     $(document).ready(function () {
-		getCars(100, '');
+		debugger;
+		let brandId = getUrlParameter("brand_id");
+		if(undefined != brandId && "" != brandId){
+			clearFilter();
+			getCars(100, "&brand_id="+brandId);
+		} else{
+			getCars(100, '');
+		}
     });
 	
 	$('#carCount').on('change', function () {
@@ -492,6 +499,8 @@ function getCars(productCount, filterCriteria) {
 	
 	let uri = 'http://18.188.5.64:3000/api/v1/Customer/5f6f0e8c1f46bf3f11660245/5f6f25f41f46bf3f11660246/ProductsList/food/'+productCount+'/0?filter='+filterCriteria;
 	
+	console.log(uri);
+	
 	let h = new Headers();
 	h.append('__authorization_x_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbmRpcHVuamFiZGkuZ3piQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoicHVuamFiaWhhbmRpIiwiaWF0IjoxNjA1NTUxMzYwLCJleHAiOjE2MTMzMjczNjB9.ZSZower_BqliN0D7s7hgDrLvIfYHRNrdNSz24IQwM6k');
 
@@ -550,6 +559,21 @@ function applyCarousel() {
 		autoHeight: false,
 		autoplay: false
 	});
+}
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
 }	
 		
 </script>
