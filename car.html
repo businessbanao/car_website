@@ -48,16 +48,16 @@
         <div id="mobile-menu-wrap"></div>
         <ul class="offcanvas__widget__add">
             <li><i class="fa fa-clock-o"></i> Week day: 07:00 am to 10:00 pm</li>
-            <li><i class="fa fa-envelope-o"></i><a href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></li>
+            <li><i class="fa fa-envelope-o"></i><a style="color: #000000;" href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></li>
         </ul>
         <div class="offcanvas__phone__num">
             <i class="fa fa-phone"></i>
-            <span><a href="tel:919958008084">+91-9958008084</a></span>
+            <span><a style="color: #000000;" href="tel:919958008084">+91-9958008084</a></span>
         </div>
         <div class="offcanvas__social">
             <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
             <a target="_blank" href="https://www.youtube.com/channel/UCigwZZ48aBVhAIDIj-3g7Zg"><i class="fa fa-youtube"></i></a>
-            <a target="_blank" href="#"><i class="fa fa-google"></i></a>
+            <!-- <a target="_blank" href="#"><i class="fa fa-google"></i></a> -->
             <a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
         </div>
     </div>
@@ -71,14 +71,14 @@
                     <div class="col-lg-7">
                         <ul class="header__top__widget">
                             <li><i class="fa fa-clock-o"></i> Week day: 07:00 am to 10:00 pm</li>
-                            <li><i class="fa fa-envelope-o"></i><a href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></li>
+                            <li><i class="fa fa-envelope-o"></i><a style="color: #ffffff;" href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-5">
                         <div class="header__top__right">
                             <div class="header__top__phone">
                                 <i class="fa fa-phone"></i>
-                                <span><a href="tel:919958008084">+91-9958008084</a></span>
+                                <span><a style="color: #ffffff;" href="tel:919958008084">+91-9958008084</a></span>
                             </div>
                             <div class="header__top__social">
                                 <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
@@ -168,7 +168,7 @@
                         <div class="car__filter">
                             <h5>Car Filter</h5>
                             <form action="#">
-								<div class="filter-price">
+								<!-- <div class="filter-price">
                                     <p>Price:</p>
                                     <div class="price-range-wrap">
                                         <div class="filter-price-range"></div>
@@ -178,7 +178,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
+								<select class="carFilter startingPrice">
+                                    <option data-display="Starting Price" value="">Starting Price</option>
+                                    <option value='&price_from=0'>0 Lakh</option>
+                                    <option value='&price_from=5'>5 Lakh</option>
+                                    <option value='&price_from=10'>10 Lakh</option>
+                                    <option value='&price_from=15'>15 Lakh</option>
+									<option value='&price_from=20'>20 Lakh</option>
+									<option value='&price_from=25'>25 Lakh</option>
+									<option value='&price_from=30'>30 Lakh</option>
+									<option value='&price_from=35'>35 Lakh</option>
+									<option value='&price_from=40'>40 Lakh</option>
+									<option value='&price_from=45'>45 Lakh</option>
+									<option value='&price_from=50'>50 Lakh</option>
+									
+                                </select>
+								<select class="carFilter endingPrice">
+                                    <option data-display="Ending Price" value="">Ending Price</option>
+                                    <option value='&price_to=0'>0 Lakh</option>
+                                    <option value='&price_to=5'>5 Lakh</option>
+                                    <option value='&price_to=10'>10 Lakh</option>
+                                    <option value='&price_to=15'>15 Lakh</option>
+									<option value='&price_to=20'>20 Lakh</option>
+									<option value='&price_to=25'>25 Lakh</option>
+									<option value='&price_to=30'>30 Lakh</option>
+									<option value='&price_to=35'>35 Lakh</option>
+									<option value='&price_to=40'>40 Lakh</option>
+									<option value='&price_to=45'>45 Lakh</option>
+									<option value='&price_to=50'>50 Lakh</option>
+									
+                                </select>
+								
                                 <select class="carFilter filterBrand">
                                     <option data-display="Brand" value="">Select Brand</option>
                                     <option value="&brand_id=5f6faa22181ee9c7154a4a87">Hyundai</option>
@@ -192,7 +223,7 @@
 									<option value="&brand_id=5f84803e17797d9226340b4b">Kia</option>
 									<option value="&brand_id=5f84805017797d9226340b4c">Ford</option>
 									<option value="&brand_id=5f886f1417797d9226340ba7">Mahindra</option>									
-                                </select class="carFilter">
+                                </select>
 								
 								<select class="carFilter filterBodyType">
                                     <option data-display="Body Type" value="">Select Body Type</option>
@@ -227,7 +258,7 @@
                 <div class="col-lg-9">
                     <div class="car__filter__option">
                         <div class="row">
-                            <!--<div class="col-lg-6 col-md-6">
+                            <div class="col-lg-6 col-md-6">
                                 <div class="car__filter__option__item">
                                     <h6>Show On Page</h6>
                                     <select id="carCount">
@@ -237,7 +268,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6">
+                            <!--<div class="col-lg-6 col-md-6">
                                 <div class="car__filter__option__item car__filter__option__item--right">
                                     <h6>Sort By</h6>
                                     <select>
@@ -248,18 +279,18 @@
                             </div> -->
                         </div>
                     </div>
-                    <div class="row allCarContainer">
+                    <div class="row allCarContainer" id="carDiv">
                         <!-- car list section -->
                     </div>
                     <div class="pagination__option pages">
-                        <!-- <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-						<a href="#">4</a>
-						<a href="#">5</a>
-						<a href="#">6</a>
-						<a href="#">7</a>
-                        <a href="#"><span class="arrow_carrot-2right"></span></a> -->
+                        <a class="active pageNumber">1</a>
+                        <a class="pageNumber">2</a>
+                        <a class="pageNumber">3</a>
+						<a class="pageNumber">4</a>
+						<a class="pageNumber">5</a>
+						<a class="pageNumber">6</a>
+						<a class="pageNumber">7</a>
+                        <!-- <a><span class="arrow_carrot-2right"></span></a> -->
                     </div>
                 </div>
             </div>
@@ -279,8 +310,8 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__contact__option">
-                            <div class="option__item"><i class="fa fa-phone"></i> <a href="tel:919958008084">+91-9958008084</a></div>
-                            <div class="option__item email"><i class="fa fa-envelope-o"></i><a href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></div>
+                            <div class="option__item"><i class="fa fa-phone"></i> <a style="color: #ffffff;" href="tel:919958008084">+91-9958008084</a></div>
+                            <div class="option__item email"><i class="fa fa-envelope-o"></i><a style="color: #000000;" href="mailto:contact@bookmydreamcar.com">contact@bookmydreamcar.com</a></div>
                         </div>
                     </div>
                 </div>
@@ -290,14 +321,14 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="footer__about">
                         <div class="footer__logo">
-							<a href="#"><img src="img/logo/footer-logo-white.png" alt="" style="height: 97px;">
+							<a><img src="img/logo/footer-logo-white.png" alt="" style="height: 97px;">
 						</div>
                         <p>Shop no-55, Opposite Huda Complex Wazirabad Market Sector-52, Gurgaon, Haryana 
 						122003<br>
-						<a href="tel:919958008084">+91-9958008084</a></p>
+						<a style="color: #ffffff;" href="tel:919958008084">+91-9958008084</a></p>
                         <div class="footer__social">
-                            <a target="_blank" href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a target="_blank" href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
                             <a target="_blank" href="https://www.youtube.com/channel/UCigwZZ48aBVhAIDIj-3g7Zg" class="youtube"><i class="fa fa-youtube"></i></a>
                         </div>
                     </div>
@@ -306,10 +337,10 @@
                     <div class="footer__widget">
                         <h5>Services</h5>
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Buy Car At Home</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Test Drive At Home</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Car Insurance</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Car Loan</a></li>
+                            <li><a href="./index.html"><i class="fa fa-angle-right"></i> Buy Car At Home</a></li>
+                            <li><a href="./index.html"><i class="fa fa-angle-right"></i> Test Drive At Home</a></li>
+                            <li><a href="./index.html"><i class="fa fa-angle-right"></i> Car Insurance</a></li>
+                            <li><a href="./index.html"><i class="fa fa-angle-right"></i> Car Loan</a></li>
                         </ul>
                     </div>
                 </div>
@@ -317,10 +348,17 @@
                     <div class="footer__widget">
                         <h5>Body Types</h5>
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Hatchback</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Sedan</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> SUV</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Crossover</a></li>
+                            <li><a href="./car.html?body_type=SEDAN"><i class="fa fa-angle-right"></i> SEDAN</a></li>
+                            <li><a href="./car.html?body_type=SUV"><i class="fa fa-angle-right"></i> SUV</a></li>
+                            <li><a href="./car.html?body_type=MICRO"><i class="fa fa-angle-right"></i> MICRO</a></li>
+                            <li><a href="./car.html?body_type=COUPE"><i class="fa fa-angle-right"></i> COUPE</a></li>
+							<li><a href="./car.html?body_type=HATCH_BACK"><i class="fa fa-angle-right"></i> HATCH BACK</a></li>
+							<li><a href="./car.html?body_type=MINI_VAN"><i class="fa fa-angle-right"></i> MINI VAN</a></li>
+							<li><a href="./car.html?body_type=CUV"><i class="fa fa-angle-right"></i> CUV</a></li>
+							<li><a href="./car.html?body_type=Pickup"><i class="fa fa-angle-right"></i> PICKUP</a></li>
+							<li><a href="./car.html?body_type=ROADSTER"><i class="fa fa-angle-right"></i> ROADSTER</a></li>
+							<li><a href="./car.html?body_type=VAN"><i class="fa fa-angle-right"></i> VAN</a></li>
+							<li><a href="./car.html?body_type=CONVERTIBLE"><i class="fa fa-angle-right"></i> CONVERTIBLE</a></li>
                         </ul>
                     </div>
                 </div>
@@ -328,21 +366,20 @@
                     <div class="footer__brand">
                         <h5>Top Brands</h5>
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Maruti Suzuki</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Hyundai</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Honda</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Ford</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> MG</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> KIA</a></li>
+                            <li><a href="./car.html?brand_id=5f76ac3f08281ff75ae92ef4"><i class="fa fa-angle-right"></i> Maruti Suzuki</a></li>
+                            <li><a href="./car.html?brand_id=5f6faa22181ee9c7154a4a87"><i class="fa fa-angle-right"></i> Hyundai</a></li>
+                            <li><a href="./car.html?brand_id=5f847f8f17797d9226340b47"><i class="fa fa-angle-right"></i> Honda</a></li>
+                            <li><a href="./car.html?brand_id=5f84805017797d9226340b4c"><i class="fa fa-angle-right"></i> Ford</a></li>
+							<li><a href="./car.html?brand_id=5f84801317797d9226340b4a"><i class="fa fa-angle-right"></i> MG</a></li>
+							<li><a href="./car.html?brand_id=5f84803e17797d9226340b4b"><i class="fa fa-angle-right"></i> KIA</a></li>
 							
                         </ul>
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Mahindra</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Nissan</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Tata</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i> Toyota</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> Volkswagen</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> Renault</a></li>
+                            <li><a href="./car.html?brand_id=5f886f1417797d9226340ba7"><i class="fa fa-angle-right"></i> Mahindra</a></li>
+                            <li><a href="./car.html?brand_id=5f76ac5508281ff75ae92ef5"><i class="fa fa-angle-right"></i> Tata</a></li>
+                            <li><a href="./car.html?brand_id=5f76ac7008281ff75ae92ef6"><i class="fa fa-angle-right"></i> Toyota</a></li>
+							<li><a href="./car.html?brand_id=5f847ff717797d9226340b49"><i class="fa fa-angle-right"></i> Volkswagen</a></li>
+							<li><a href="./car.html?brand_id=5f847fd317797d9226340b48"><i class="fa fa-angle-right"></i> Renault</a></li>
                         </ul>
                     </div>
                 </div>
@@ -383,46 +420,56 @@
     $(document).ready(function () {
 		debugger;
 		let brandId = getUrlParameter("brand_id");
+		let bodyType = getUrlParameter("body_type");
 		if(undefined != brandId && "" != brandId){
 			clearFilter();
-			getCars(100, "&brand_id="+brandId);
+			setFilter("brand", bodyType);
+			getCars(9, 0, "&brand_id="+brandId);
+		} else if(undefined != bodyType && "" != bodyType){
+			clearFilter();
+			setFilter("body", bodyType);
+			getCars(9, 0, "&body_type="+bodyType);
 		} else{
-			getCars(100, '');
+			getCars(9, 0, '');
 		}
     });
 	
 	$('#carCount').on('change', function () {
-        getCars(100, "");
-		//$(".pages").empty();
-		/*if('9' == this.value){
-			$(".pages").html('<a href="" class="active">1</a>'+
-							'<a href="">2</a>'+
-							'<a href="">3</a>'+
-							'<a href="">4</a>'+
-							'<a href="">5</a>'+
-							'<a href="">6</a>'+
-							'<a href="">7</a>')
+        let carCount = 9;
+		$(".pages").empty();
+		if('9' == this.value){
+			carCount = 9;
+			$(".pages").html('<a class="active pageNumber">1</a>'+
+							'<a class="pageNumber">2</a>'+
+							'<a class="pageNumber">3</a>'+
+							'<a class="pageNumber">4</a>'+
+							'<a class="pageNumber">5</a>'+
+							'<a class="pageNumber">6</a>'+
+							'<a class="pageNumber">7</a>');
 		} else if('15' == this.value){
-			$(".pages").html('<a href="" class="active">1</a>'+
-							'<a href="">2</a>'+
-							'<a href="">3</a>'+
-							'<a href="">4</a>')
+			carCount = 15;
+			$(".pages").html('<a class="active pageNumber">1</a>'+
+							'<a class="pageNumber">2</a>'+
+							'<a class="pageNumber">3</a>'+
+							'<a class="pageNumber">4</a>');
 		} else {
-			$(".pages").html('<a href="" class="active">1</a>'+
-							'<a href="">2</a>'+
-							'<a href="">3</a>');
-		}*/
+			carCount = 20;
+			$(".pages").html('<a class="active pageNumber">1</a>'+
+							'<a class="pageNumber">2</a>'+
+							'<a class="pageNumber">3</a>');
+		}
+		getCars(carCount, 0, "");
 	});
 	
 	$('.resetFilter').on('click', function () {
 		clearFilter();
-		getCars(100, '');
+		getCars($("#carCount").val(), 0, '');
 	});
 
 	$('.carFilter').on('change', function () {
-        var filterCriteria = $(".filterFuelType").val() + $(".filterBodyType").val() + $(".filterBrand").val();
-		if($(".filterBrand").val() != ""){
-			getCars(100, filterCriteria);
+        var filterCriteria = $(".filterFuelType").val() + $(".filterBodyType").val() + $(".filterBrand").val() + $(".startingPrice").val() + $(".endingPrice").val();
+		if(filterCriteria != ""){
+			getCars($("#carCount").val(), 0, filterCriteria);
 		}
 	});
 	
@@ -430,10 +477,28 @@
 		search();
 	});
 	
+	$('.pages .pageNumber').on('click', function () {
+		$(".pages a").removeClass("active").removeClass("pageNumber");
+		$(this).addClass("active").addClass("pageNumber");
+		let carCount = $('#carCount').val();
+		let startFrom = $(this).text();
+		getCars(carCount, (parseInt(startFrom)-1)*parseInt(carCount), '');		
+	});
+	
 function search(){
 	clearFilter();
 	searchCars($("#search").val());
 }	
+
+function setFilter(filterType, filterVal){
+	if("brand" == filterType){
+		$("select.filterBrand").val("&brand_id="+filterVal);
+		$("div.filterBrand span").text(filterVal);
+	} else if("body" == filterType) {
+		$("select.filterBodyType").val("&body_type="+filterVal);
+		$("div.filterBodyType span").text(filterVal);
+	}
+}
 
 function clearFilter(){
 	$("select.filterBrand, select.filterBodyType, select.filterFuelType").val("")
@@ -494,10 +559,10 @@ function searchCars(searchStr){
 	});
 }
 
-function getCars(productCount, filterCriteria) {
+function getCars(productCount, startFrom, filterCriteria) {
 	$(".allCarContainer").empty();
 	
-	let uri = 'http://18.188.5.64:3000/api/v1/Customer/5f6f0e8c1f46bf3f11660245/5f6f25f41f46bf3f11660246/ProductsList/food/'+productCount+'/0?filter='+filterCriteria;
+	let uri = 'http://18.188.5.64:3000/api/v1/Customer/5f6f0e8c1f46bf3f11660245/5f6f25f41f46bf3f11660246/ProductsList/food/'+productCount+'/' + startFrom + '?filter='+filterCriteria;
 	
 	console.log(uri);
 	
