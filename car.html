@@ -510,7 +510,7 @@ function clearFilter(){
 function searchCars(searchStr){
 	$(".allCarContainer").empty();
 	
-	let searchUri = 'http://18.188.5.64:3000/api/v1/5f6f0e8c1f46bf3f11660245/null/customer/search?search='+searchStr+'&filter=Product';
+	let searchUri = 'http://13.127.184.151:3000/api/v1/5f6f0e8c1f46bf3f11660245/null/customer/search?search='+searchStr+'&filter=Product';
 	
 	let head = new Headers();
 	head.append('__authorization_x_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbmRpcHVuamFiZGkuZ3piQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoicHVuamFiaWhhbmRpIiwiaWF0IjoxNjA1NTUxMzYwLCJleHAiOjE2MTMzMjczNjB9.ZSZower_BqliN0D7s7hgDrLvIfYHRNrdNSz24IQwM6k');
@@ -562,7 +562,7 @@ function searchCars(searchStr){
 function getCars(productCount, startFrom, filterCriteria) {
 	$(".allCarContainer").empty();
 	
-	let uri = 'http://18.188.5.64:3000/api/v1/Customer/5f6f0e8c1f46bf3f11660245/5f6f25f41f46bf3f11660246/ProductsList/food/'+productCount+'/' + startFrom + '?filter='+filterCriteria;
+	let uri = 'http://13.127.184.151:3000/api/v1/Customer/5f6f0e8c1f46bf3f11660245/5f6f25f41f46bf3f11660246/ProductsList/food/'+productCount+'/' + startFrom + '?filter='+filterCriteria;
 	
 	console.log(uri);
 	

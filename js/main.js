@@ -37,7 +37,7 @@
             
 			var saveData = $.ajax({
 				type: 'POST',
-                url:  'http://18.188.5.64:3000/api/v1/customer/saveQuery',
+                url:  'http://13.127.184.151:3000/api/v1/customer/saveQuery',
                 data: userData,
                 success: function(resultData) { 
 					document.getElementById('name').value = '';
@@ -64,7 +64,7 @@
 	function getCars(recomended) {
 		let filter=recomended?"rec":"";
 		
-		let uri = 'http://18.188.5.64:3000/api/v1/admin/all/5f6f0e8c1f46bf3f11660245/ProductsList/20/0?filter='+filter;
+		let uri = 'http://13.127.184.151:3000/api/v1/admin/all/5f6f0e8c1f46bf3f11660245/ProductsList/20/0?filter='+filter;
 		let h = new Headers();
 		h.append('__authorization_x_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbmRpcHVuamFiZGkuZ3piQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoicHVuamFiaWhhbmRpIiwiaWF0IjoxNjA1NTUxMzYwLCJleHAiOjE2MTMzMjczNjB9.ZSZower_BqliN0D7s7hgDrLvIfYHRNrdNSz24IQwM6k');
 
