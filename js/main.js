@@ -93,7 +93,7 @@
 				elm += '</div>'+
 					   '<div class="car__item__text">'+
 					   '<div class="car__item__text__inner">'+
-					   '<h5><a href="#">' + e.productName + '</a></h5>'+
+					   '<h5><a href="./car-details.html?product_id=' + e._id + '">' + e.productName + '</a></h5>'+
 					   '<ul>'+
 					   '<li><span>' + (e.addCustomeFeatures.price_from/100000).toFixed(2) + '</span> Lakh</li>'+
 					   '<li><span>' + e.addCustomeFeatures.engine + '</span> CC</li>'+
